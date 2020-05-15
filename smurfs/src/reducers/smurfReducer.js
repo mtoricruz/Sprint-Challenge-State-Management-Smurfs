@@ -7,11 +7,7 @@ import {
 
 const initialState = {
     isFetching: false,
-    smurfs: [{
-        name: null,
-        age: null,
-        height: null
-    }],
+    smurfs: [],
     addingSmurf: false
 }
 
@@ -37,9 +33,9 @@ export const smurfReducer = (state = initialState, action) => {
             }
         case POST_SMURF_SUCCESS:
             const newSmurf = {
-                name: action.payload,
-                age: action.payload,
-                height: action.payload,
+                name: '',
+                age: '',
+                height: '',
             }
             return {
                 ...state,
