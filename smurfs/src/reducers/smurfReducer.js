@@ -31,12 +31,13 @@ export const smurfReducer = (state = initialState, action) => {
             }
         case POST_SMURF_SUCCESS:
             const newSmurf = {
-                name: '',
+                name: action.payload.name,
                 age: '',
                 height: '',
             }
             return {
                 ...state,
+                isFetching:false,
                 smurfs: [...state.smurfs, newSmurf]
             }
         default:
