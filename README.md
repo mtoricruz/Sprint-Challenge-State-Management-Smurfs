@@ -22,11 +22,25 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] What problem does the context API help solve?
-- [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-- [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
-- [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
-- [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+- [x] What problem does the context API help solve?
+
+Context provides a way to share values between components without having to explicitly pass a prop through every level of the tree thus eliminating the need for ‘prop drilling’. Especially useful when you need to go 3+ levels deep.
+
+- [x] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+The ‘store’ is where you hold your reducers in your app. The reducers are what contain the logic for the specific cases you want to deploy throughout your app, and actions are where you dispatch those cases to perform the logic they would return.
+
+- [x] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Component state is state that is managed within a specific component and only that one. While Application state is state managed usually in a separate file but can be distrubuted to any component in an app if needed. You would want to use component state if you're only managing state of a specific piece of data that wouldn't be reused anywhere else in the app. Otherwise if you have state that will be managed in different components then use application state in 1 file and distribute it to the respective components that will need it.
+
+- [x] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+Redux thunk allows asynchronous flow with Redux using a thunk(function that returns a function) which allows us to make grab data from apis. It changes the action-creators by making allowing them to be async.
+
+- [x] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+My favorite state management system is Redux! The concept of having ALL state management be in 1 store is appealing to me, the main roadblock for me is getting used to the syntax and mastering the flow.
 
 ## Project Set Up
 
