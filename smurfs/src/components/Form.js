@@ -14,14 +14,14 @@ const Form = props => {
     setNewSmurf({ ...newSmurf, [e.target.name]: e.target.value});
   };
 
-  const submitForm = e => {
-    e.preventDefault();
-  };
+//   const submitForm = e => {
+//     e.preventDefault();
+//   };
 
   return (
     <div>
       <h2>Add a Smurf:</h2>
-      <form onSubmit={submitForm}>
+      <form >
         <label>
           Name:
           <input
@@ -61,8 +61,9 @@ const Form = props => {
 };
 
 const mapStateToProps = state => {
+    console.log('Form State', { state })
   return {
-    addingSmurf: state.addingSmurf
+    smurfs: state.smurfs
   };
 };
 

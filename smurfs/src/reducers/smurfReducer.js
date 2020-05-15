@@ -32,8 +32,8 @@ export const smurfReducer = (state = initialState, action) => {
         case POST_SMURF_SUCCESS:
             const newSmurf = {
                 name: action.payload.name,
-                age: '',
-                height: '',
+                age: action.payload.age,
+                height: action.payload.height,
             }
             return {
                 ...state,
