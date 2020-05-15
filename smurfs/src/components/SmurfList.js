@@ -16,9 +16,7 @@ import { fetchSmurfs } from '../actions/smurfAction';
 const SmurfList = ({
     isFetching,
     fetchSmurfs,
-    name,
-    age,
-    height,
+    smurfs
 }) => {
     useEffect(() => {
         fetchSmurfs();
@@ -30,9 +28,13 @@ const SmurfList = ({
         {isFetching && <h2>Fetching Smurfs...</h2>}
         {!isFetching && (
             <div>
-                <p>Name: {name}</p>
-                <p>Age: {age}</p>
-                <p>Height: {height}</p>
+                {smurfs.map(smurf => (
+                    <div key={Math.random()}>
+                        <p>Name: {smurf.name}</p>
+                        <p>Age: {smurf.age}</p>
+                        <p>Height: {smurf.height}</p>
+                    </div>
+            ))}
             </div>
         )}
         </main>
@@ -43,9 +45,7 @@ const mapStateToProps = state => {
     console.log({ state });
     return {
         isFetching: state.isFetching,
-        name: state.name,
-        age: state.age,
-        height: state.height
+        smurfs: state.smurfs
     };
 };
 

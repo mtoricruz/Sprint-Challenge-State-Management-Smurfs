@@ -22,9 +22,7 @@ export const smurfReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetching: false,
-                name: action.payload.name,
-                age: action.payload.age,
-                height: action.payload.height
+                smurfs: action.payload
             }
         case POST_SMURF_START:
             return {

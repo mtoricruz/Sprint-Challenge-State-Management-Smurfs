@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { postSmurf} from "../actions/smurfAction";
 
-// don't forget to pass in your props!
+
 const Form = props => {
   const [newSmurf, setNewSmurf] = useState({
     name: '',
-    age: '',
+    age: 0,
     height: '',
   });
 
@@ -39,7 +39,7 @@ const Form = props => {
             value={newSmurf.age}
             name="age"
             id=""
-            type="text"
+            type="number"
           />
         </label>
         <label>

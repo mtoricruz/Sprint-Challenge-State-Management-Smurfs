@@ -8,7 +8,7 @@ export const fetchSmurfs = () => {
         axios.get('http://localhost:3333/smurfs/')
             .then(res => {
                 console.log('This is fetching from api',res.data)
-                dispatch({ type: FETCH_SMURF_SUCCESS, payload: res.data[0] })
+                dispatch({ type: FETCH_SMURF_SUCCESS, payload: res.data })
             })
             .catch(err => console.log(err))
     }
